@@ -5,6 +5,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import { PermissionsAndroid } from 'react-native';
 import Geolocation from '@react-native-community/geolocation';
 import Share from 'react-native-share';
+import showShareLocationConfirmationDialog from './showShareLocationConfirmationDialog';
 
 const HomeActionButtons = ({navigation}) => {
   const [currentLocation, setCurrentLocation] = useState(null);
@@ -185,7 +186,7 @@ async function requestLocationPermissions(navigation){
 
 
 const openLiveTracking = (navigation) =>{
-  navigation.navigate('LiveLocationActivity')
+  showShareLocationConfirmationDialog(navigation);
 }
 
 const openGeofence = (navigation)=>{
